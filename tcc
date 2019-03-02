@@ -23,6 +23,13 @@ def valid_style(str):
         raise argparse.ArgumentTypeError(msg)
 
 
+def valid_title(str):
+    if not str:
+        print('usage: tcc [-h] [--style STYLE] words [words ...]')
+        print('tcc: error: too few arguments')
+        sys.exit(1)
+
+
 parser = argparse.ArgumentParser(
     formatter_class=argparse.RawDescriptionHelpFormatter,
     description=textwrap.dedent('''\
@@ -75,8 +82,12 @@ def style_enabled(style):
     return 'true' if args.style == style else 'false'
 
 
+title = squish(trim(args.title))
+
+valid_title(title)
+
 data = urlencode({
-    'title': squish(trim(args.title)),
+    'title': title,
     'styleA': style_enabled('A'),
     'styleP': style_enabled('P'),
     'styleC': style_enabled('C'),
