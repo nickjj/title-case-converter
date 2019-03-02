@@ -8,6 +8,8 @@ having `curl` installed.*
 
 ## Example
 
+#### Positional Arguments
+
 ```
 nick:~$ tcc hello world, this is a test
 Hello World, This Is a Test
@@ -20,6 +22,14 @@ separate argument (as seen above) or pass in a quoted string of words.
 The quoted string of words is useful if you want to use `&` in your title and
 don't want to worry about escaping it. An example of that would be: `tcc "ren
 & stimpy"`, which would produce `Ren & Stimpy` as output.
+
+#### Piping Output from Another Program
+
+If you want to pipe the output of another program as input to `tcc`, that works
+too.
+
+`echo hello world, this is a test | tcc` produces the same output as
+`tcc hello world, this is a test`.
 
 ## Style Guides
 

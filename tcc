@@ -3,6 +3,7 @@
 import argparse
 import json
 import subprocess
+import sys
 import textwrap
 
 try:
@@ -38,7 +39,15 @@ parser = argparse.ArgumentParser(
 parser.add_argument('--style', default='C', type=valid_style,
                     help='choose one: A, P, C (default), M, N or W')
 
-parser.add_argument('title', metavar='words', type=str, nargs='+',
+opts = {}
+if not sys.stdin.isatty():
+    opts = {
+        'default': sys.stdin.read().split(),
+        'nargs': '?'
+    }
+
+parser.add_argument('title', default=opts.get('default', None),
+                    metavar='words', type=str, nargs=opts.get('nargs', '+'),
                     help='1 or more words (the title) you want to convert')
 
 args = parser.parse_args()
