@@ -111,6 +111,17 @@ it's worth using the site directly.
 But having a CLI script that produces a converted title as output allows you to
 integrate it with your favorite code editor.
 
-For example, you can set up a custom key binding with your code editor which
-takes your selected text, passes that text in as input to this `tcc` script
-and then replaces the selected text with `tcc`'s output.
+## Integrating `tcc` with Your Code Editor
+
+You can set up a custom key binding with your code editor which takes your
+selected text, passes that text in as input to this `tcc` script and then
+replaces the selected text with `tcc`'s output. That work flow should work
+with most popular editors.
+
+### Vim
+
+No plugins are required, just this key binding. Select your text and hit
+`<leader>tc` to convert it.
+```viml
+vnoremap <leader>tc c<C-R>=system('tcc', getreg('"'))[:-2]<CR>
+```
