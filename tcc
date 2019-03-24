@@ -75,7 +75,7 @@ def replace_chars(str):
     str = str.replace(u'\u2013', '-')
     str = str.replace(u'\u201c', '"')
     str = str.replace(u'\u201d', '"')
-    str = str.replace(u'\u2018', "'")
+    str = str.replace(u'\u2018', "`")
     return str.replace(u'\u2019', "'")
 
 
