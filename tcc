@@ -71,7 +71,8 @@ def squish(title):
 def replace_chars(str):
     str = str.decode('utf-8')
 
-    # Replace "fancy" double and single quotes.
+    # Replace unicode characters.
+    str = str.replace(u'\u2013', '-')
     str = str.replace(u'\u201c', '"')
     str = str.replace(u'\u201d', '"')
     str = str.replace(u'\u2018', "'")
