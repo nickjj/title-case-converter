@@ -6,6 +6,7 @@
 
 - Fix backticks being converted to single quotes
 - Fix trailing question marks and other characters from being stripped out
+- Fix errors being thrown if there was a hyphen in the title
 
 ## v0.2.0
 
