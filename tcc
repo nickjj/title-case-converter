@@ -113,6 +113,7 @@ for key, value in body_json.items():
             word = replace_chars(k['word'].encode('utf-8'))
             result += '{0}{1}'.format(joint, word)
 
-result += body_json['lastJoint'].encode('utf-8')
+result += body_json['lastJoint']
+result.encode('utf-8')
 
 print(result)
