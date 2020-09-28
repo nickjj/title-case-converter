@@ -3,7 +3,7 @@
 A command line script that takes a list of words and converts their case using
 1 of 6 industry standard style guides.
 
-*It's a self contained Python script that only requireshaving `curl`
+*It's a self contained Python script that only requires having `curl`
 installed.*
 
 ## Example
