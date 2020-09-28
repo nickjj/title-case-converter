@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.0
+
+*Released: September 28th 2020*
+
+- Drop support for Python 2
+
 ## v0.2.1
 
 *Released: March 24th 2019*
