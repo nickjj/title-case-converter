@@ -63,7 +63,7 @@ sudo curl \
 
 You can confirm it works by running `tcc --help`.
 
-## How It Works / Credits 
+## How It Works / Credits
 
 A lot of libraries will capitalize every word but then have a black list of
 words to skip such as "a" or "or", but this strategy isn't accurate at all.
@@ -118,10 +118,17 @@ selected text, passes that text in as input to this `tcc` script and then
 replaces the selected text with `tcc`'s output. That work flow should work
 with most popular editors.
 
-### Vim
+### Neovim / Vim
 
-No plugins are required, just this key binding. Select your text and hit
-`<leader>tc` to convert it.
-```viml
-vnoremap <leader>tc c<C-R>=system('tcc', getreg('"'))[:-2]<CR>
+No plugins are required, just this key binding. Select your text and hit `gt`
+to convert it.
+
+```lua
+-- Neovim
+vim.keymap.set("x", "gt", "c<C-r>=system('tcc', getreg('\"'))[:-2]<CR>")
+```
+
+```vim
+" Vim
+vnoremap gt c<C-R>=system('tcc', getreg('"'))[:-2]<CR>
 ```
